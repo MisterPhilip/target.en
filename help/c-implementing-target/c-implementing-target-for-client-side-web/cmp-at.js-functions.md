@@ -202,21 +202,20 @@ adobe.target.getOffers({
 
 ```
 adobe.target.getOffers({
-request: {
-"prefetch": {
-  "views": [
-    {
-      "parameters": {
-        "ad": "1"
-      },
-      "profileParameters": {
-        "age": 23
-      }
+  request: {
+    "prefetch": {
+      "views": [
+        {
+          "parameters": {
+            "ad": "1"
+          },
+          "profileParameters": {
+            "age": 23
+          }
+        }
+      ]
     }
-  ]
-}
   }
-}
 });
 ```
 
@@ -226,17 +225,22 @@ request: {
 adobe.target.getOffers({
   request: {
     execute: {
-      mboxes: [{
-        mbox: "foo"
-      },{
-        mbox: "bla",
-        parameters: {
-          a: 1
+      mboxes: [
+        {
+          index: 0,
+          name: "first-mbox"
         },
-        profileParameters: {
-          b: 2
+        {
+          index: 1,
+          name: "second-mbox",
+          parameters: {
+            a: 1
+          },
+          profileParameters: {
+            b: 2
+          }
         }
-      }]
+      ]
     }
   }
 });
